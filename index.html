@@ -299,41 +299,55 @@
   .timeline-title { font-family: 'Fraunces', serif; color: var(--ink); font-size: 1.35rem; margin-bottom: 8px; }
   .timeline-detail { color: var(--ink-soft); }
 
-  /* EDUCATION TEASER */
-  .education-teaser {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-    gap: 56px;
-    align-items: center;
-    padding: 72px;
-    overflow: hidden;
+  /* EDUCATION PROGRAMS */
+  .education-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .education-card {
+    min-width: 0;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
     position: relative;
+    overflow: hidden;
   }
-  .education-teaser::after {
+  .education-card::after {
     content: '';
     position: absolute;
-    inset: auto -10% -24% auto;
-    width: 48%;
-    height: 70%;
-    background: linear-gradient(135deg, rgba(78, 128, 117, 0.11), rgba(180, 119, 90, 0.07));
-    clip-path: polygon(20% 0, 100% 14%, 82% 100%, 0 74%);
+    right: -18%;
+    bottom: -22%;
+    width: 58%;
+    height: 58%;
+    background: linear-gradient(135deg, rgba(78, 128, 117, 0.12), rgba(180, 119, 90, 0.08));
+    clip-path: polygon(18% 0, 100% 18%, 82% 100%, 0 74%);
     pointer-events: none;
   }
-  .education-copy { position: relative; z-index: 2; }
-  .education-copy h2 { font-size: 3.5rem; margin-bottom: 24px; }
-  .education-copy p { color: var(--ink-soft); font-size: 1.12rem; max-width: 620px; margin-bottom: 34px; }
-  .education-meta {
-    position: relative; z-index: 2;
-    display: grid; gap: 14px;
+  .education-card-content { position: relative; z-index: 2; }
+  .education-card h3 { font-size: 2.15rem; margin-bottom: 18px; }
+  .education-card p { color: var(--ink-soft); font-size: 1.02rem; margin-bottom: 0; }
+  .education-card-meta {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
-  .education-meta-item {
-    display: flex; justify-content: space-between; gap: 24px;
-    padding: 18px 0; border-bottom: 1px solid var(--line);
-    color: var(--ink-soft); font-size: 0.98rem;
+  .education-meta-pill {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.9rem;
   }
-  .education-meta-item:first-child { border-top: 1px solid var(--line); }
-  .education-meta-item span { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.78rem; }
-  .education-meta-item strong { color: var(--ink); font-weight: 600; text-align: right; }
+  .education-meta-pill span {
+    display: block;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .education-card-actions { position: relative; z-index: 2; margin-top: auto; }
 
   /* WORKS & ARTICLES */
   .works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
@@ -450,7 +464,7 @@
     .glass-panel { padding: 40px 24px !important; }
     .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; }
-    .experience-layout, .works-grid, .education-teaser { grid-template-columns: 1fr; }
+    .experience-layout, .works-grid, .education-list { grid-template-columns: 1fr; }
     .book-feature { grid-template-columns: 1fr; }
     .article-grid { grid-template-columns: 1fr; }
     .step::before { display: none; }
@@ -509,11 +523,9 @@
     .card { padding: 40px 28px; }
     .stat-grid { grid-template-columns: 1fr; }
     .timeline-item { grid-template-columns: 1fr; gap: 10px; }
-    .education-teaser { padding: 42px 24px; gap: 32px; }
-    .education-copy h2 { font-size: 2.45rem; }
-    .education-copy p { font-size: 1.02rem; }
-    .education-meta-item { display: grid; gap: 5px; }
-    .education-meta-item strong { text-align: left; }
+    .education-card { padding: 34px 24px; }
+    .education-card h3 { font-size: 1.9rem; }
+    .education-card-meta { grid-template-columns: 1fr; }
     .work-panel, .article-card, .modal-panel { padding: 30px 24px; }
     .book-cover-art { max-width: 240px; width: 100%; margin: 0 auto; }
     .book-actions .btn { width: 100%; }
@@ -574,7 +586,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#hakkimda" class="nav-link">Hakkımda</a>
       <a href="#uzmanlik" class="nav-link">Uzmanlık</a>
-      <a href="spor-psikolojisi-egitimi.html" class="nav-link">Eğitim</a>
+      <a href="#egitim" class="nav-link">Eğitim</a>
       <a href="#deneyim" class="nav-link">Deneyim</a>
       <a href="#surec" class="nav-link">Süreç</a>
       <a href="#yazilar" class="nav-link">Yazılar</a>
@@ -674,19 +686,45 @@
 
   <section id="egitim">
     <div class="container">
-      <div class="glass-panel education-teaser gs-reveal-up">
-        <div class="education-copy">
-          <span class="eyebrow">Eğitim Programı</span>
-          <h2>Spor Psikolojisi Temel Eğitim Programı</h2>
-          <p>Klinik bakış açısı ve saha deneyimini birleştiren, psikologlar, PDR ve spor bilimleri mezunları için hazırlanmış 4 modüllük canlı online eğitim.</p>
-          <a class="btn btn-primary btn-magnet" href="spor-psikolojisi-egitimi.html">Detayları İncele</a>
-        </div>
-        <div class="education-meta" aria-label="Eğitim özeti">
-          <div class="education-meta-item"><span>Format</span><strong>Online Zoom</strong></div>
-          <div class="education-meta-item"><span>Tarih</span><strong>2, 9, 16, 23 Eylül 2026</strong></div>
-          <div class="education-meta-item"><span>Süre</span><strong>4 modül / 8 saat</strong></div>
-          <div class="education-meta-item"><span>Kontenjan</span><strong>20 kişi</strong></div>
-        </div>
+      <div class="section-head gs-reveal-up">
+        <span class="eyebrow">Eğitim Programları</span>
+        <h2>Canlı online eğitimler</h2>
+        <p>Spor psikolojisi bilgisini farklı ihtiyaçlara göre yapılandıran eğitimler. Detay ve ön kayıt formları ilgili eğitim sayfalarında yer alır.</p>
+      </div>
+      <div class="education-list">
+        <article class="glass-panel education-card gs-reveal-up">
+          <div class="education-card-content">
+            <span class="eyebrow">Profesyonel Eğitim</span>
+            <h3>Spor Psikolojisi Temel Eğitim Programı</h3>
+            <p>Psikologlar, PDR ve spor bilimleri mezunları için hazırlanmış; klinik bakış açısı ve saha deneyimini birleştiren 4 modüllük eğitim.</p>
+          </div>
+          <div class="education-card-meta" aria-label="Spor psikolojisi eğitimi özeti">
+            <div class="education-meta-pill"><span>Format</span>Online Zoom</div>
+            <div class="education-meta-pill"><span>Tarih</span>2-23 Eylül 2026</div>
+            <div class="education-meta-pill"><span>Süre</span>4 modül / 8 saat</div>
+            <div class="education-meta-pill"><span>Ücret</span>13.000 TL + KDV</div>
+          </div>
+          <div class="education-card-actions">
+            <a class="btn btn-primary btn-magnet" href="spor-psikolojisi-egitimi.html">Detayları İncele</a>
+          </div>
+        </article>
+
+        <article class="glass-panel education-card gs-reveal-up">
+          <div class="education-card-content">
+            <span class="eyebrow">Ebeveyn Akademisi</span>
+            <h3>Sporcu Ebeveyn Akademisi-1</h3>
+            <p>Sporcu çocuk sahibi ebeveynler için; destek ile baskı arasındaki farkı, maç öncesi-sonrası iletişimi ve özgüveni güçlendiren aile tutumunu ele alan canlı eğitim.</p>
+          </div>
+          <div class="education-card-meta" aria-label="Sporcu ebeveyn akademisi özeti">
+            <div class="education-meta-pill"><span>Format</span>Online Zoom</div>
+            <div class="education-meta-pill"><span>Tarih</span>5 Ağustos 2026</div>
+            <div class="education-meta-pill"><span>Süre</span>2 saat</div>
+            <div class="education-meta-pill"><span>Ücret</span>3.750 TL + KDV</div>
+          </div>
+          <div class="education-card-actions">
+            <a class="btn btn-primary btn-magnet" href="sporcu-ebeveyn-akademisi.html">Detayları İncele</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -930,7 +968,7 @@
             </div>
             <div class="form-group">
               <label for="email">E-Posta Adresiniz</label>
-              <input type="email" id="email" name="E-posta" class="form-control" placeholder="ornek@mail.com" autocomplete="email" required>
+              <input type="email" id="email" name="email" class="form-control" placeholder="ornek@mail.com" autocomplete="email" required>
             </div>
             <div class="form-group">
               <label for="message">Mesajınız</label>
