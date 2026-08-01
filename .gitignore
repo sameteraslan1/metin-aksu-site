@@ -1,0 +1,4 @@
+.DS_Store
+Galeri/*
+!Galeri/web/
+!Galeri/web/**

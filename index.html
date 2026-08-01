@@ -299,6 +299,191 @@
   .timeline-title { font-family: 'Fraunces', serif; color: var(--ink); font-size: 1.35rem; margin-bottom: 8px; }
   .timeline-detail { color: var(--ink-soft); }
 
+  /* GALLERY */
+  .gallery-showcase {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr 0.65fr;
+    grid-template-rows: repeat(2, 280px);
+    gap: 18px;
+  }
+  .gallery-item {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.56);
+    box-shadow: var(--shadow-soft);
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+  }
+  .gallery-item:first-child { grid-row: 1 / 3; }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  }
+  .gallery-item:first-child img { object-position: 52% center; }
+  .gallery-item:hover img { transform: scale(1.045); filter: saturate(1.06); }
+  .gallery-caption {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    background: rgba(22, 37, 33, 0.76);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .gallery-caption strong {
+    max-width: 88%;
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .gallery-caption span {
+    color: rgba(255,255,255,0.62);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+  .gallery-item:first-child .gallery-caption { padding: 20px 22px; }
+  .gallery-item:first-child .gallery-caption strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.28rem;
+    font-weight: 400;
+  }
+  .gallery-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+  }
+  .gallery-all-count {
+    padding-left: 12px;
+    border-left: 1px solid rgba(255,255,255,0.34);
+    color: rgba(255,255,255,0.74);
+    font-size: 0.78rem;
+  }
+  .gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 360;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: rgba(20, 33, 30, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .gallery-modal.open { display: flex; }
+  .gallery-viewer {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    width: min(1180px, 100%);
+    max-height: 88vh;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 24px;
+    background: #14231f;
+    box-shadow: 0 34px 100px rgba(0,0,0,0.34);
+  }
+  .gallery-stage {
+    position: relative;
+    min-height: min(72vh, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0d1714;
+  }
+  .gallery-stage img {
+    width: 100%;
+    height: 100%;
+    max-height: min(72vh, 720px);
+    display: block;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+  .gallery-stage img.loading { opacity: 0.3; }
+  .gallery-nav,
+  .gallery-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    background: rgba(16, 29, 25, 0.72);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .gallery-nav:hover,
+  .gallery-close:hover { background: var(--teal); transform: scale(1.04); }
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translateY(-50%);
+    font-size: 1.35rem;
+  }
+  .gallery-nav:hover { transform: translateY(-50%) scale(1.04); }
+  .gallery-prev { left: 20px; }
+  .gallery-next { right: 20px; }
+  .gallery-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    font-size: 1.45rem;
+  }
+  .gallery-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 42px 34px;
+    color: rgba(255,255,255,0.72);
+  }
+  .gallery-counter {
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .gallery-details h2 {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 26px;
+  }
+  .gallery-progress {
+    height: 1px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.18);
+  }
+  .gallery-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
   /* EDUCATION PROGRAMS */
   .education-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
   .education-card {
@@ -465,6 +650,15 @@
     .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; }
     .experience-layout, .works-grid, .education-list { grid-template-columns: 1fr; }
+    .gallery-showcase {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: 420px repeat(2, 250px);
+    }
+    .gallery-item:first-child { grid-column: 1 / -1; grid-row: auto; }
+    .gallery-viewer { grid-template-columns: 1fr; overflow: auto; }
+    .gallery-stage { min-height: 58vh; }
+    .gallery-stage img { max-height: 58vh; }
+    .gallery-details { padding: 28px; }
     .book-feature { grid-template-columns: 1fr; }
     .article-grid { grid-template-columns: 1fr; }
     .step::before { display: none; }
@@ -523,6 +717,26 @@
     .card { padding: 40px 28px; }
     .stat-grid { grid-template-columns: 1fr; }
     .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+    .gallery-showcase {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+      gap: 16px;
+    }
+    .gallery-item,
+    .gallery-item:first-child { grid-column: auto; grid-row: auto; height: 280px; }
+    .gallery-caption { right: 12px; bottom: 12px; left: 12px; padding: 14px 16px; }
+    .gallery-item:first-child .gallery-caption { padding: 16px 18px; }
+    .gallery-item:first-child .gallery-caption strong { font-size: 1rem; }
+    .gallery-modal { padding: 12px; }
+    .gallery-viewer { max-height: 94vh; border-radius: 18px; }
+    .gallery-stage { min-height: 54vh; }
+    .gallery-stage img { max-height: 54vh; }
+    .gallery-nav { top: auto; bottom: 16px; width: 44px; height: 44px; transform: none; }
+    .gallery-nav:hover { transform: scale(1.04); }
+    .gallery-prev { left: 16px; }
+    .gallery-next { right: 16px; }
+    .gallery-close { top: 14px; right: 14px; }
+    .gallery-details h2 { font-size: 1.6rem; }
     .education-card { padding: 34px 24px; }
     .education-card h3 { font-size: 1.9rem; }
     .education-card-meta { grid-template-columns: 1fr; }
@@ -588,6 +802,7 @@
       <a href="#uzmanlik" class="nav-link">Uzmanlık</a>
       <a href="#egitim" class="nav-link">Eğitim</a>
       <a href="#deneyim" class="nav-link">Deneyim</a>
+      <a href="#galeri" class="nav-link">Galeri</a>
       <a href="#surec" class="nav-link">Süreç</a>
       <a href="#yazilar" class="nav-link">Yazılar</a>
       <a href="#iletisim" class="btn btn-primary btn-magnet" style="padding: 14px 32px;">Hadi Tanışalım</a>
@@ -791,6 +1006,45 @@
     </div>
   </section>
 
+  <section id="galeri">
+    <div class="container">
+      <div class="section-head gs-reveal-up">
+        <span class="eyebrow">Saha, Akademi ve Medya</span>
+        <h2>Çalışmalardan kareler</h2>
+        <p>Milli takım kamplarından psikoeğitim çalışmalarına, akademik buluşmalardan televizyon programlarına uzanan mesleki yolculuktan seçili anlar.</p>
+      </div>
+
+      <div class="gallery-showcase gs-reveal-up" aria-label="Çalışmalardan seçili fotoğraflar">
+        <button class="gallery-item" type="button" data-gallery-index="2" aria-label="2022 U17 Milli Takımlar Avrupa Şampiyonası Finalleri fotoğrafını büyüt">
+          <img src="Galeri/web/03.jpg" alt="2022 U17 Milli Takımı saha içinde maç öncesi toplantıda" loading="lazy">
+          <span class="gallery-caption"><strong>2022 U17 Milli Takımlar Avrupa Şampiyonası Finalleri, İsrail</strong><span>03</span></span>
+        </button>
+        <button class="gallery-item" type="button" data-gallery-index="9" aria-label="Viktor Bannikov Turnuvası şampiyonluk kupası fotoğrafını büyüt">
+          <img src="Galeri/web/10.jpg" alt="Dr. Metin Aksu Viktor Bannikov Turnuvası şampiyonluk kupasıyla" loading="lazy">
+          <span class="gallery-caption"><strong>Viktor Bannikov Turnuvası şampiyonluğu</strong><span>10</span></span>
+        </button>
+        <button class="gallery-item" type="button" data-gallery-index="12" aria-label="Haliç Üniversitesi Sağlık Zirvesi fotoğrafını büyüt">
+          <img src="Galeri/web/13.jpg" alt="Haliç Üniversitesi Sağlık Zirvesi sahne söyleşisi" loading="lazy">
+          <span class="gallery-caption"><strong>Haliç Üniversitesi Sağlık Zirvesi</strong><span>13</span></span>
+        </button>
+        <button class="gallery-item" type="button" data-gallery-index="19" aria-label="U15 Milli Takım psikoeğitim fotoğrafını büyüt">
+          <img src="Galeri/web/20.jpg" alt="U15 Milli Takım kampında psikoeğitim çalışması" loading="lazy">
+          <span class="gallery-caption"><strong>U15 Milli Takım psikoeğitim çalışması</strong><span>20</span></span>
+        </button>
+        <button class="gallery-item" type="button" data-gallery-index="22" aria-label="Futbolun Psikolojisi programı fotoğrafını büyüt">
+          <img src="Galeri/web/23.jpg" alt="Futbolun Psikolojisi televizyon programı" loading="lazy">
+          <span class="gallery-caption"><strong>Futbolun Psikolojisi programı</strong><span>23</span></span>
+        </button>
+      </div>
+
+      <div class="gallery-actions gs-reveal-up">
+        <button class="btn btn-primary btn-magnet" type="button" data-gallery-index="0">
+          Tüm Galeriyi Görüntüle <span class="gallery-all-count">24 kare</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section id="surec">
     <div class="container">
       <div class="glass-panel process-wrap gs-reveal-up">
@@ -983,6 +1237,22 @@
 
 </main>
 
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+  <div class="gallery-viewer" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle">
+    <button class="gallery-close" type="button" aria-label="Galeriyi kapat">×</button>
+    <div class="gallery-stage">
+      <img id="galleryModalImage" src="" alt="">
+      <button class="gallery-nav gallery-prev" type="button" aria-label="Önceki fotoğraf">←</button>
+      <button class="gallery-nav gallery-next" type="button" aria-label="Sonraki fotoğraf">→</button>
+    </div>
+    <div class="gallery-details">
+      <div class="gallery-counter" id="galleryCounter">01 / 24</div>
+      <h2 id="galleryModalTitle"></h2>
+      <div class="gallery-progress" aria-hidden="true"><span id="galleryProgress"></span></div>
+    </div>
+  </div>
+</div>
+
 <div class="article-modal" id="articleModal" aria-hidden="true">
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-top">
@@ -1124,6 +1394,94 @@
         gsap.to(content, { height: 'auto', duration: 0.5, ease: 'expo.out' });
       }
     });
+  });
+
+  // --- GALLERY VIEWER ---
+  const galleryItems = [
+    { src: 'Galeri/web/01.jpg', caption: 'TV8,5 Sağlık Zamanı programı' },
+    { src: 'Galeri/web/02.jpg', caption: 'TV8,5 Sağlık Zamanı programı' },
+    { src: 'Galeri/web/03.jpg', caption: '2022 U17 Milli Takımlar Avrupa Şampiyonası Finalleri, İsrail' },
+    { src: 'Galeri/web/04.jpg', caption: 'Karadağ\'da milli maç gözlemi' },
+    { src: 'Galeri/web/05.jpg', caption: 'İstanbul Üniversitesi-Cerrahpaşa doktora mezuniyeti' },
+    { src: 'Galeri/web/06.jpg', caption: 'İstanbul Üniversitesi-Cerrahpaşa öğrencileriyle buluşma semineri' },
+    { src: 'Galeri/web/07.jpg', caption: 'Futbol Psikolojisi programı' },
+    { src: 'Galeri/web/08.jpg', caption: 'Genç Milli Takım rutin toplantısı' },
+    { src: 'Galeri/web/09.jpg', caption: 'Genç Milli Takım kısa eğitimi' },
+    { src: 'Galeri/web/10.jpg', caption: 'Viktor Bannikov Turnuvası şampiyonluk kupası, 2021, Kiev' },
+    { src: 'Galeri/web/11.jpg', caption: 'U19 Milli Takım kamp başlangıcı, 2025' },
+    { src: 'Galeri/web/12.jpg', caption: 'U20 Türkiye-Almanya karşılaşması gözlem anı' },
+    { src: 'Galeri/web/13.jpg', caption: 'Haliç Üniversitesi Sağlık Zirvesi, 2026' },
+    { src: 'Galeri/web/14.jpg', caption: 'U16 Milli Takımı Slovakya galibiyeti, 2021, Kiev' },
+    { src: 'Galeri/web/15.jpg', caption: 'Viktor Bannikov Turnuvası şampiyonluk pozu, 2021, Kiev' },
+    { src: 'Galeri/web/16.jpg', caption: 'Bloomberg HT Spor Kulübü programı' },
+    { src: 'Galeri/web/17.jpg', caption: 'Genç Milli Takım (2005 yaş grubu) Almanya kampı, Hannover' },
+    { src: 'Galeri/web/18.jpg', caption: 'Beykoz Üniversitesi spor psikolojisi semineri' },
+    { src: 'Galeri/web/19.jpg', caption: 'U17 Milli Takım kampı psikoeğitim çalışması, Kocaeli' },
+    { src: 'Galeri/web/20.jpg', caption: 'U15 Milli Takım kampı psikoeğitim çalışması, İstanbul' },
+    { src: 'Galeri/web/21.jpg', caption: 'U17 Milli Takım kampı psikoeğitim çalışması, Almanya' },
+    { src: 'Galeri/web/22.jpg', caption: 'U17 Milli Takım elit tur birinciliği, Slovenya' },
+    { src: 'Galeri/web/23.jpg', caption: 'Futbolun Psikolojisi programı' },
+    { src: 'Galeri/web/24.jpg', caption: 'U19 Milli Takım kampı, Hırvatistan' }
+  ];
+
+  const galleryModal = document.getElementById('galleryModal');
+  const galleryImage = document.getElementById('galleryModalImage');
+  const galleryTitle = document.getElementById('galleryModalTitle');
+  const galleryCounter = document.getElementById('galleryCounter');
+  const galleryProgress = document.getElementById('galleryProgress');
+  const galleryClose = galleryModal.querySelector('.gallery-close');
+  const galleryPrev = galleryModal.querySelector('.gallery-prev');
+  const galleryNext = galleryModal.querySelector('.gallery-next');
+  let activeGalleryIndex = 0;
+  let lastGalleryTrigger = null;
+
+  const renderGalleryItem = (index) => {
+    activeGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[activeGalleryIndex];
+    galleryImage.classList.add('loading');
+    galleryImage.src = item.src;
+    galleryImage.alt = item.caption;
+    galleryTitle.textContent = item.caption;
+    galleryCounter.textContent = `${String(activeGalleryIndex + 1).padStart(2, '0')} / ${galleryItems.length}`;
+    galleryProgress.style.width = `${((activeGalleryIndex + 1) / galleryItems.length) * 100}%`;
+  };
+
+  galleryImage.addEventListener('load', () => galleryImage.classList.remove('loading'));
+
+  const openGallery = (index, trigger) => {
+    lastGalleryTrigger = trigger;
+    renderGalleryItem(index);
+    galleryModal.classList.add('open');
+    galleryModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    lenis.stop();
+    galleryClose.focus();
+  };
+
+  const closeGallery = () => {
+    galleryModal.classList.remove('open');
+    galleryModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lenis.start();
+    if (lastGalleryTrigger) lastGalleryTrigger.focus();
+  };
+
+  document.querySelectorAll('[data-gallery-index]').forEach(trigger => {
+    trigger.addEventListener('click', () => openGallery(Number(trigger.dataset.galleryIndex), trigger));
+  });
+
+  galleryPrev.addEventListener('click', () => renderGalleryItem(activeGalleryIndex - 1));
+  galleryNext.addEventListener('click', () => renderGalleryItem(activeGalleryIndex + 1));
+  galleryClose.addEventListener('click', closeGallery);
+  galleryModal.addEventListener('click', (event) => {
+    if (event.target === galleryModal) closeGallery();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (!galleryModal.classList.contains('open')) return;
+    if (event.key === 'Escape') closeGallery();
+    if (event.key === 'ArrowLeft') renderGalleryItem(activeGalleryIndex - 1);
+    if (event.key === 'ArrowRight') renderGalleryItem(activeGalleryIndex + 1);
   });
 
   // --- ARTICLE MODAL ---
