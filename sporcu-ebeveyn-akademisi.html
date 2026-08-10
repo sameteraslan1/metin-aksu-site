@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sporcu Ebeveyn Akademisi-1 — Dr. Metin Aksu</title>
-<meta name="description" content="Sporcu Ebeveyn Akademisi-1: Spor yapan çocukların anne, baba ve bakım verenlerine yönelik uygulamalı spor psikolojisi aile eğitimi.">
+<meta name="description" content="5 Ağustos 2026 tarihinde tamamlanan Sporcu Ebeveyn Akademisi-1 programının içeriği ve kapsamı.">
 <meta property="og:title" content="Sporcu Ebeveyn Akademisi-1 — Dr. Metin Aksu">
-<meta property="og:description" content="Sporcu aileleri için doğru iletişim, performans baskısı, özgüven ve psikolojik dayanıklılık odaklı canlı online eğitim.">
+<meta property="og:description" content="Sporcu aileleri için doğru iletişim, performans baskısı, özgüven ve psikolojik dayanıklılık odaklı tamamlanmış eğitim programı.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -231,6 +231,20 @@
     border: 1px solid rgba(78, 128, 117, 0.18);
     color: var(--ink-soft);
   }
+  .closed-panel {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 34px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.68);
+    border: 1px solid var(--glass-border);
+  }
+  .closed-panel h3 { font-size: 1.7rem; margin-bottom: 12px; }
+  .closed-panel p { margin-bottom: 24px; }
+  .closed-actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -308,7 +322,7 @@
         <a class="nav-link" href="index.html#egitim">Eğitimler</a>
         <a class="nav-link" href="#icerik">Eğitim İçeriği</a>
         <a class="nav-link" href="#kime-yonelik">Kimler Katılabilir?</a>
-        <a class="nav-link" href="#on-kayit">Ön Kayıt</a>
+        <a class="nav-link" href="#program-durumu">Program Durumu</a>
       </div>
     </div>
   </nav>
@@ -317,17 +331,18 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Sporcu Ebeveyn Akademisi-1</span>
+          <span class="eyebrow">Tamamlanan Program · Sporcu Ebeveyn Akademisi-1</span>
           <h1>Spor Psikolojisi <i>Aile Eğitimi</i></h1>
           <p class="hero-lead">Sporcu çocukların ailelerinin doğru yaklaşımla performansı, özgüveni ve psikolojik dayanıklılığı nasıl destekleyebileceğini somut örneklerle ele alan uygulamaya dönük canlı eğitim.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#on-kayit">Ön Kayıt Yap</a>
+            <a class="btn btn-primary" href="#program-durumu">Program Durumu</a>
             <a class="btn btn-outline" href="#icerik">Eğitim İçeriğini İncele</a>
           </div>
         </div>
         <aside class="glass-panel hero-card" aria-label="Eğitim kısa bilgileri">
           <h2>Eğitim Özeti</h2>
           <div class="facts">
+            <div class="fact"><span>Durum</span><strong>Program tamamlandı</strong></div>
             <div class="fact"><span>Tarih</span><strong>5 Ağustos 2026</strong></div>
             <div class="fact"><span>Gün ve Saat</span><strong>Çarşamba, 20:00-22:00</strong></div>
             <div class="fact"><span>Süre</span><strong>2 saat</strong></div>
@@ -435,55 +450,26 @@
       </div>
     </section>
 
-    <section id="on-kayit">
+    <section id="program-durumu">
       <div class="container">
         <div class="glass-panel application">
           <div>
-            <span class="eyebrow">Ön Kayıt</span>
-            <h2>Kayıt ve bilgi için</h2>
-            <p>Katılım ücreti 3.750 TL + KDV'dir. Kontenjan sınırlıdır. Formu doldurduktan sonra kayıt detayları için sizinle iletişime geçilir.</p>
+            <span class="eyebrow">Program Durumu</span>
+            <h2>Bu dönem tamamlandı</h2>
+            <p>Sporcu Ebeveyn Akademisi-1, 5 Ağustos 2026 tarihinde gerçekleştirildi. Bu sayfa programın kapsamını arşiv amacıyla sunmaktadır; bu dönem için yeni ön kayıt kabul edilmemektedir.</p>
             <div class="application-note">
-              Ödeme yöntemi ve diğer katılım detayları kayıt sonrasında WhatsApp üzerinden paylaşılır. Sorularınız için 0530 476 61 11 numaralı WhatsApp hattımıza yazabilirsiniz.
+              Yeni dönemler ve benzer eğitimler duyurulduğunda bilgi almak için iletişim kanallarından ulaşabilirsiniz.
             </div>
           </div>
 
-          <form id="parentAcademyForm" action="https://usebasin.com/f/6467d17b7bbb" method="POST">
-            <input type="hidden" name="Form Tipi" value="Sporcu Ebeveyn Akademisi Ön Kayıt">
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="parentFullName">Ad Soyad</label>
-                <input class="form-control" type="text" id="parentFullName" name="Ad Soyad" placeholder="Adınız Soyadınız" autocomplete="name" required>
-              </div>
-              <div class="form-group">
-                <label for="parentPhone">Telefon Numarası</label>
-                <input class="form-control" type="tel" id="parentPhone" name="Telefon Numarası" placeholder="05XX XXX XX XX" autocomplete="tel" required>
-              </div>
-              <div class="form-group">
-                <label for="parentEmail">E-posta Adresi</label>
-                <input class="form-control" type="email" id="parentEmail" name="email" placeholder="ornek@mail.com" autocomplete="email" required>
-              </div>
-              <div class="form-group">
-                <label for="location">Şehir / Ülke</label>
-                <input class="form-control" type="text" id="location" name="Şehir / Ülke" placeholder="İstanbul / Türkiye" required>
-              </div>
-              <div class="form-group">
-                <label for="branch">Çocuğunuzun Spor Branşı</label>
-                <input class="form-control" type="text" id="branch" name="Çocuğunuzun Spor Branşı" placeholder="Futbol, basketbol, tenis..." required>
-              </div>
-              <div class="form-group">
-                <label for="childAge">Çocuğunuzun Yaşı</label>
-                <input class="form-control" type="number" id="childAge" name="Çocuğunuzun Yaşı" placeholder="12" min="4" max="25" required>
-              </div>
-              <div class="form-group full">
-                <label for="expectation">Bu eğitimden en çok hangi konuda fayda sağlamayı umuyorsunuz?</label>
-                <textarea class="form-control" id="expectation" name="Beklenti" placeholder="Kısaca paylaşabilirsiniz."></textarea>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Ön Kayıt Talebini Gönder</button>
+          <div class="closed-panel">
+            <h3>Yeni eğitimlerden haberdar olun</h3>
+            <p>Yeni tarih ve program bilgisi için ana sayfadaki iletişim formunu kullanabilir veya WhatsApp üzerinden doğrudan yazabilirsiniz.</p>
+            <div class="closed-actions">
+              <a class="btn btn-primary" href="index.html#iletisim">İletişime Geç</a>
               <a class="btn btn-outline" href="https://wa.me/905304766111" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>
