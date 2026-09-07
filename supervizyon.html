@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bireysel Spor Psikolojisi Süpervizyonu — Dr. Metin Aksu</title>
+<meta name="description" content="Spor psikolojisi alanında çalışan veya uygulamaya hazırlanan meslektaşlar için Dr. Metin Aksu ile bireysel süpervizyon süreci.">
+<meta property="og:title" content="Bireysel Spor Psikolojisi Süpervizyonu — Dr. Metin Aksu">
+<meta property="og:description" content="Bilgiyi sahada güvenli, etik ve yapılandırılmış bir uygulamaya dönüştürmeye yönelik bireysel süpervizyon.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAF7F0;
+    --bg-soft: #EDF4F0;
+    --ink: #1D2A27;
+    --ink-soft: #5A6A64;
+    --ink-faint: #8B9892;
+    --teal: #4E8075;
+    --teal-hover: #39685F;
+    --accent: #B4775A;
+    --surface: rgba(255, 255, 255, 0.76);
+    --glass-border: rgba(39, 64, 58, 0.13);
+    --line: rgba(39, 64, 58, 0.12);
+    --shadow-soft: 0 24px 70px rgba(61, 76, 69, 0.11);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #FFFDF8 0%, var(--bg) 50%, var(--bg-soft) 100%);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+      linear-gradient(120deg, rgba(78, 128, 117, 0.09), transparent 38%),
+      linear-gradient(300deg, rgba(180, 119, 90, 0.08), transparent 42%);
+    content: '';
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 300; line-height: 1.08; }
+  a { color: inherit; text-decoration: none; }
+  .page { position: relative; z-index: 1; }
+  .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+  .narrow { width: min(900px, calc(100% - 48px)); }
+
+  nav {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 253, 248, 0.88);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 86px; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { width: 42px; height: 42px; flex: 0 0 auto; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-text strong { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 400; }
+  .brand-text span { color: var(--accent); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-link { color: var(--ink-soft); font-size: 13px; font-weight: 700; text-transform: uppercase; transition: color 0.25s ease; }
+  .nav-link:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 15px 28px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+  .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 15px 34px rgba(57, 104, 95, 0.18); }
+  .btn-primary:hover { background: var(--teal-hover); transform: translateY(-2px); }
+  .btn-outline { border-color: var(--glass-border); background: rgba(255,255,255,0.54); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--teal); transform: translateY(-2px); }
+
+  .glass-panel {
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { width: 38px; height: 1px; background: var(--accent); content: ''; }
+
+  .hero { padding: clamp(76px, 10vw, 130px) 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.16fr 0.84fr; align-items: center; gap: clamp(48px, 7vw, 90px); }
+  .hero h1 { max-width: 760px; margin-bottom: 28px; font-size: clamp(3.4rem, 6.4vw, 6.2rem); }
+  .hero h1 i { color: var(--teal); font-weight: 300; }
+  .hero-lead { max-width: 650px; margin-bottom: 36px; color: var(--ink-soft); font-size: 1.18rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-card { padding: 38px; }
+  .hero-card h2 { margin-bottom: 24px; font-size: 2rem; }
+  .facts { display: grid; }
+  .fact { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid var(--line); }
+  .fact:last-child { border-bottom: 1px solid var(--line); }
+  .fact span { color: var(--accent); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; }
+  .fact strong { max-width: 210px; text-align: right; font-weight: 600; }
+
+  section { padding: clamp(84px, 10vw, 140px) 0; }
+  .intro { padding-top: 0; }
+  .intro-panel { padding: clamp(34px, 5vw, 56px); }
+  .intro-panel h2 { max-width: 760px; margin-bottom: 28px; font-size: clamp(2.5rem, 4.5vw, 4.3rem); }
+  .intro-panel p { max-width: 850px; margin-bottom: 18px; color: var(--ink-soft); font-size: 1.08rem; }
+  .intro-panel p:last-child { margin-bottom: 0; }
+
+  .section-head { max-width: 760px; margin-bottom: 54px; }
+  .section-head h2 { margin-bottom: 20px; font-size: clamp(2.6rem, 5vw, 4.5rem); }
+  .section-head p { color: var(--ink-soft); font-size: 1.1rem; }
+  .path-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .path-card { padding: clamp(30px, 4vw, 44px); }
+  .path-index { display: block; margin-bottom: 32px; color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+  .path-card h3 { margin-bottom: 16px; font-size: clamp(1.8rem, 3vw, 2.45rem); }
+  .path-card > p { margin-bottom: 22px; color: var(--ink-soft); }
+  .path-card ul { display: grid; gap: 12px; list-style: none; }
+  .path-card li { display: grid; grid-template-columns: 12px 1fr; gap: 10px; color: var(--ink-soft); font-size: 0.96rem; }
+  .path-card li::before { width: 5px; height: 5px; margin-top: 10px; border-radius: 50%; background: var(--teal); content: ''; }
+  .path-note { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+  .format-band { background: rgba(255,255,255,0.38); border-block: 1px solid var(--line); }
+  .format-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .format-item { min-width: 0; padding: 26px; border: 1px solid var(--glass-border); border-radius: 18px; background: rgba(255,255,255,0.62); }
+  .format-item span { display: block; margin-bottom: 10px; color: var(--accent); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+  .format-item strong { display: block; font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 400; line-height: 1.3; }
+
+  .contact-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 50px; padding: clamp(34px, 5vw, 58px); }
+  .contact-panel h2 { margin-bottom: 18px; font-size: clamp(2.5rem, 4.5vw, 4rem); }
+  .contact-panel p { max-width: 720px; color: var(--ink-soft); font-size: 1.06rem; }
+  .contact-panel .btn { min-width: 240px; }
+
+  footer { padding: 54px 0; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 0.84rem; text-transform: uppercase; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer-inner a:hover { color: var(--teal); }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .hero-grid, .contact-panel { grid-template-columns: 1fr; }
+    .path-grid { grid-template-columns: 1fr; }
+    .format-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-panel .btn { width: fit-content; }
+  }
+  @media (max-width: 640px) {
+    .container, .narrow { width: min(100% - 36px, 1180px); }
+    .nav-inner { height: 78px; }
+    .brand svg { width: 36px; height: 36px; }
+    .brand-text strong { font-size: 18px; }
+    .hero { padding-top: 62px; }
+    .hero h1 { font-size: 3rem; }
+    .hero-lead { font-size: 1.05rem; }
+    .hero-card, .intro-panel, .path-card, .contact-panel { padding: 30px 22px; }
+    .fact { display: grid; gap: 4px; }
+    .fact strong { max-width: none; text-align: left; }
+    .format-grid { grid-template-columns: 1fr; }
+    .contact-panel .btn { width: 100%; min-width: 0; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Ana sayfaya dön">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="var(--teal)" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="20" cy="20" r="3" fill="var(--teal)"/>
+          <circle cx="11" cy="14" r="2" fill="var(--accent)"/>
+          <circle cx="29" cy="13" r="2" fill="var(--accent)"/>
+          <circle cx="13" cy="28" r="2" fill="var(--teal)"/>
+          <circle cx="28" cy="27" r="2" fill="var(--teal)"/>
+          <path d="M20 20 11 14M20 20 29 13M20 20 13 28M20 20 28 27" stroke="var(--teal)" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+        <div class="brand-text"><strong>Dr. Metin Aksu</strong><span>Klinik Psikolog</span></div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html#egitim">Eğitim ve Süpervizyon</a>
+        <a class="nav-link" href="#calisma-bicimleri">Çalışma Biçimleri</a>
+        <a class="nav-link" href="#surec">Süreç</a>
+        <a class="btn btn-primary" href="#iletisim">Bilgi Al</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Mesleki Süpervizyon</span>
+          <h1>Spor psikolojisinde <i>bireysel süpervizyon</i></h1>
+          <p class="hero-lead">Bilgiyi sahada güvenli, etik ve yapılandırılmış bir uygulamaya dönüştürmek için mesleki ihtiyaçlarınıza göre şekillenen bireysel çalışma süreci.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#calisma-bicimleri">Çalışma Biçimlerini İncele</a>
+            <a class="btn btn-outline" href="#iletisim">Ayrıntılı Bilgi Al</a>
+          </div>
+        </div>
+        <aside class="glass-panel hero-card" aria-label="Süpervizyon kısa bilgileri">
+          <h2>Süreç Özeti</h2>
+          <div class="facts">
+            <div class="fact"><span>Çalışma</span><strong>Bireysel süreç</strong></div>
+            <div class="fact"><span>Sıklık</span><strong>Ayda 2 görüşme</strong></div>
+            <div class="fact"><span>Görüşme</span><strong>75 dakika</strong></div>
+            <div class="fact"><span>İlk Dönem</span><strong>3 aylık çalışma</strong></div>
+            <div class="fact"><span>Format</span><strong>Online veya İstanbul'da yüz yüze</strong></div>
+            <div class="fact"><span>Kontenjan</span><strong>Sınırlı</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container narrow">
+        <div class="glass-panel intro-panel">
+          <span class="eyebrow">Yaklaşım</span>
+          <h2>Teknik bilginin ötesinde, bütüncül bir mesleki çerçeve</h2>
+          <p>Spor psikolojisi alanında çalışmak yalnızca performans tekniklerini bilmekten ibaret değildir. Sporcunun başvuru nedenini doğru değerlendirmek, performans sorunuyla klinik ihtiyacı ayrıştırmak, sporcu-aile-antrenör sistemini birlikte ele almak ve mesleki sınırları korumak gerekir.</p>
+          <p>Bireysel süpervizyon süreci; meslektaşın eğitim geçmişi, deneyimi, aktif çalışma alanı ve mesleki ihtiyaçları doğrultusunda yapılandırılır.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="calisma-bicimleri">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">İki Çalışma Biçimi</span>
+          <h2>Bulunduğunuz noktaya göre yapılandırılan süreç</h2>
+          <p>Aktif vakalarla çalışan meslektaşlar ile uygulamaya hazırlanan meslektaşların ihtiyaçları ayrı çerçevelerde ele alınır.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="glass-panel path-card">
+            <span class="path-index">01 · Aktif Vaka</span>
+            <h3>Vaka Temelli Bireysel Süpervizyon</h3>
+            <p>Aktif olarak sporcularla çalışan meslektaşlara yöneliktir. Süreçte aktif vakalar üzerinden şu başlıklar ele alınır:</p>
+            <ul>
+              <li>Başvuru nedeninin değerlendirilmesi</li>
+              <li>Vaka formülasyonu</li>
+              <li>İlk ve devam eden görüşmelerin yapılandırılması</li>
+              <li>Görüşme hedeflerinin belirlenmesi</li>
+              <li>Müdahale planlaması</li>
+              <li>Sporcu-aile-antrenör ilişkileri</li>
+              <li>Klinik ihtiyaç ile performans alanının ayrıştırılması</li>
+              <li>Mesleki sınırlar, etik konular ve yönlendirme kararları</li>
+            </ul>
+          </article>
+
+          <article class="glass-panel path-card">
+            <span class="path-index">02 · Uygulamaya Hazırlık</span>
+            <h3>Uygulamaya Hazırlık Odaklı Bireysel Süreç</h3>
+            <p>Henüz aktif danışanı bulunmayan ancak spor psikolojisi alanında çalışmaya hazırlanmak isteyen meslektaşlara yöneliktir.</p>
+            <ul>
+              <li>İlk telefon görüşmesi ve uygunluk değerlendirmesi</li>
+              <li>Sporcu ve ebeveynle ilk görüşmenin yapılandırılması</li>
+              <li>Gizlilik, onam ve bilgi paylaşım sınırları</li>
+              <li>Kurgusal vakalar üzerinden formülasyon</li>
+              <li>Rol canlandırmaları</li>
+              <li>İlk görüşme soru planı</li>
+              <li>Müdahale seçimi ve seans planlaması</li>
+              <li>Risk değerlendirmesi ve yönlendirme</li>
+            </ul>
+            <p class="path-note">Aktif bir vakayla çalışılmaya başlandığında süreç, vaka temelli bireysel süpervizyona dönüştürülebilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="format-band" id="surec">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Çalışma Yapısı</span>
+          <h2>Sürecin temel çerçevesi</h2>
+          <p>Görüşmeler, mesleki ihtiyaçlar ve aktif çalışma koşulları doğrultusunda yapılandırılır.</p>
+        </div>
+        <div class="format-grid">
+          <div class="format-item"><span>Çalışma Biçimi</span><strong>Bireysel süreç</strong></div>
+          <div class="format-item"><span>Görüşme Sıklığı</span><strong>Ayda 2 görüşme</strong></div>
+          <div class="format-item"><span>Görüşme Süresi</span><strong>75 dakika</strong></div>
+          <div class="format-item"><span>Başlangıç Dönemi</span><strong>İlk etapta 3 ay</strong></div>
+          <div class="format-item"><span>Katılım Biçimi</span><strong>Online veya İstanbul'da yüz yüze</strong></div>
+          <div class="format-item"><span>Kontenjan</span><strong>Sınırlı</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="container">
+        <div class="glass-panel contact-panel">
+          <div>
+            <span class="eyebrow">Başvuru ve Ayrıntılı Bilgi</span>
+            <h2>Sürecin size uygunluğunu birlikte değerlendirelim</h2>
+            <p>Güncel kontenjan, çalışma biçimi, ücret bilgisi ve diğer sorularınız için Room Psikolojik Danışmanlık ve Eğitim WhatsApp hattı üzerinden iletişime geçebilirsiniz.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/905304766111?text=Merhaba%2C%20spor%20psikolojisi%20alan%C4%B1ndaki%20bireysel%20s%C3%BCpervizyon%20s%C3%BCreci%20hakk%C4%B1nda%20ayr%C4%B1nt%C4%B1l%C4%B1%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan Bilgi Al</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Dr. Metin Aksu</span>
+      <a href="index.html">Ana sayfaya dön</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
