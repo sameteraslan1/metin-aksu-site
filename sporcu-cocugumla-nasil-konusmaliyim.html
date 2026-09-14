@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sporcu Çocuğumla Nasıl Konuşmalıyım? — Dr. Metin Aksu</title>
+<meta name="description" content="Sporcuların aileleri için Dr. Metin Aksu ile canlı online iletişim semineri. 29 Eylül 2026 Salı, 20:30-22:00.">
+<meta property="og:title" content="Sporcu Çocuğumla Nasıl Konuşmalıyım? — Dr. Metin Aksu">
+<meta property="og:description" content="Maç öncesi, maç sonrası ve eve dönüş yolunda sporcu çocuğunuzla destekleyici iletişim kurmaya yönelik online seminer.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAF7F0;
+    --bg-soft: #EDF4F0;
+    --ink: #1D2A27;
+    --ink-soft: #5A6A64;
+    --ink-faint: #8B9892;
+    --teal: #4E8075;
+    --teal-hover: #39685F;
+    --accent: #B4775A;
+    --surface: rgba(255, 255, 255, 0.76);
+    --glass-border: rgba(39, 64, 58, 0.13);
+    --line: rgba(39, 64, 58, 0.12);
+    --shadow-soft: 0 24px 70px rgba(61, 76, 69, 0.11);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #FFFDF8 0%, var(--bg) 50%, var(--bg-soft) 100%);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+      linear-gradient(120deg, rgba(78, 128, 117, 0.09), transparent 38%),
+      linear-gradient(300deg, rgba(180, 119, 90, 0.08), transparent 42%);
+    content: '';
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 300; line-height: 1.08; }
+  a { color: inherit; text-decoration: none; }
+  .page { position: relative; z-index: 1; }
+  .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+  .narrow { width: min(900px, calc(100% - 48px)); }
+
+  nav {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 253, 248, 0.88);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 86px; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { width: 42px; height: 42px; flex: 0 0 auto; }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-text strong { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 400; }
+  .brand-text span { color: var(--accent); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-link { color: var(--ink-soft); font-size: 13px; font-weight: 700; text-transform: uppercase; transition: color 0.25s ease; }
+  .nav-link:hover { color: var(--ink); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 15px 28px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+  .btn-primary { background: var(--teal); color: #fff; box-shadow: 0 15px 34px rgba(57, 104, 95, 0.18); }
+  .btn-primary:hover { background: var(--teal-hover); transform: translateY(-2px); }
+  .btn-outline { border-color: var(--glass-border); background: rgba(255,255,255,0.54); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--teal); transform: translateY(-2px); }
+
+  .glass-panel {
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { width: 38px; height: 1px; background: var(--accent); content: ''; }
+
+  .hero { padding: clamp(76px, 10vw, 130px) 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.16fr 0.84fr; align-items: center; gap: clamp(48px, 7vw, 90px); }
+  .hero h1 { max-width: 780px; margin-bottom: 28px; font-size: clamp(3.4rem, 6.4vw, 6.2rem); }
+  .hero h1 i { color: var(--teal); font-weight: 300; }
+  .hero-lead { max-width: 670px; margin-bottom: 36px; color: var(--ink-soft); font-size: 1.18rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-card { padding: 38px; }
+  .hero-card h2 { margin-bottom: 24px; font-size: 2rem; }
+  .facts { display: grid; }
+  .fact { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid var(--line); }
+  .fact:last-child { border-bottom: 1px solid var(--line); }
+  .fact span { color: var(--accent); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; }
+  .fact strong { max-width: 220px; text-align: right; font-weight: 600; }
+
+  section { padding: clamp(84px, 10vw, 140px) 0; }
+  .intro { padding-top: 0; }
+  .intro-panel { padding: clamp(34px, 5vw, 56px); }
+  .intro-panel h2 { max-width: 790px; margin-bottom: 28px; font-size: clamp(2.5rem, 4.5vw, 4.3rem); }
+  .intro-panel p { max-width: 850px; margin-bottom: 18px; color: var(--ink-soft); font-size: 1.08rem; }
+  .intro-panel p:last-child { margin-bottom: 0; }
+
+  .section-head { max-width: 770px; margin-bottom: 54px; }
+  .section-head h2 { margin-bottom: 20px; font-size: clamp(2.6rem, 5vw, 4.5rem); }
+  .section-head p { color: var(--ink-soft); font-size: 1.1rem; }
+  .topic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .topic-item { display: grid; grid-template-columns: 52px 1fr; gap: 20px; padding: 30px 24px; border-bottom: 1px solid var(--line); }
+  .topic-item:nth-child(odd) { border-right: 1px solid var(--line); }
+  .topic-number { color: var(--accent); font-family: 'Fraunces', serif; font-size: 1.5rem; line-height: 1.2; }
+  .topic-item h3 { font-size: 1.45rem; line-height: 1.3; }
+
+  .audience-band { border-block: 1px solid var(--line); background: rgba(255,255,255,0.38); }
+  .audience-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; align-items: center; gap: clamp(42px, 8vw, 96px); }
+  .audience-grid h2 { font-size: clamp(2.6rem, 5vw, 4.5rem); }
+  .audience-copy { color: var(--ink-soft); font-size: clamp(1.14rem, 2vw, 1.42rem); line-height: 1.75; }
+
+  .presenter { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(38px, 7vw, 82px); align-items: start; }
+  .presenter h2 { font-size: clamp(2.6rem, 5vw, 4.5rem); }
+  .presenter-copy { padding-top: 8px; }
+  .presenter-copy strong { display: block; margin-bottom: 18px; color: var(--teal); font-size: 1.05rem; }
+  .presenter-copy p { color: var(--ink-soft); font-size: 1.08rem; }
+
+  .contact-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 50px; padding: clamp(34px, 5vw, 58px); }
+  .contact-panel h2 { margin-bottom: 18px; font-size: clamp(2.5rem, 4.5vw, 4rem); }
+  .contact-panel p { max-width: 720px; color: var(--ink-soft); font-size: 1.06rem; }
+  .contact-actions { display: grid; justify-items: center; gap: 12px; }
+  .contact-actions .btn { min-width: 280px; }
+  .contact-note { max-width: 320px; color: var(--ink-faint); font-size: 0.78rem; text-align: center; }
+
+  footer { padding: 54px 0; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 0.84rem; text-transform: uppercase; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer-inner a:hover { color: var(--teal); }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .hero-grid, .audience-grid, .presenter, .contact-panel { grid-template-columns: 1fr; }
+    .topic-list { grid-template-columns: 1fr; }
+    .topic-item:nth-child(odd) { border-right: none; }
+    .contact-actions { justify-items: start; }
+  }
+  @media (max-width: 640px) {
+    .container, .narrow { width: min(100% - 36px, 1180px); }
+    .nav-inner { height: 78px; }
+    .brand svg { width: 36px; height: 36px; }
+    .brand-text strong { font-size: 18px; }
+    .hero { padding-top: 62px; }
+    .hero h1 { font-size: 3rem; }
+    .hero-lead { font-size: 1.05rem; }
+    .hero-card, .intro-panel, .contact-panel { padding: 30px 22px; }
+    .fact { display: grid; gap: 4px; }
+    .fact strong { max-width: none; text-align: left; }
+    .topic-item { grid-template-columns: 38px 1fr; gap: 12px; padding: 24px 4px; }
+    .topic-item h3 { font-size: 1.3rem; }
+    .contact-actions { width: 100%; }
+    .contact-actions .btn { width: 100%; min-width: 0; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Ana sayfaya dön">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="var(--teal)" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="20" cy="20" r="3" fill="var(--teal)"/>
+          <circle cx="11" cy="14" r="2" fill="var(--accent)"/>
+          <circle cx="29" cy="13" r="2" fill="var(--accent)"/>
+          <circle cx="13" cy="28" r="2" fill="var(--teal)"/>
+          <circle cx="28" cy="27" r="2" fill="var(--teal)"/>
+          <path d="M20 20 11 14M20 20 29 13M20 20 13 28M20 20 28 27" stroke="var(--teal)" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+        <div class="brand-text"><strong>Dr. Metin Aksu</strong><span>Klinik Psikolog</span></div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html#egitim">Eğitim ve Süpervizyon</a>
+        <a class="nav-link" href="#basliklar">Seminer İçeriği</a>
+        <a class="nav-link" href="#kimler">Kimler Katılabilir?</a>
+        <a class="btn btn-primary" href="#kayit">Kayıt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Sporcuların Aileleri İçin Online Seminer</span>
+          <h1>Sporcu çocuğumla <i>nasıl konuşmalıyım?</i></h1>
+          <p class="hero-lead">Maç öncesinden eve dönüş yoluna kadar, çocuğunuzun motivasyonunu ve özgüvenini destekleyen bir iletişim dili kurmak üzerine canlı seminer.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kayit">Kayıt için WhatsApp'tan Yazın</a>
+            <a class="btn btn-outline" href="#basliklar">Başlıkları İncele</a>
+          </div>
+        </div>
+        <aside class="glass-panel hero-card" aria-label="Seminer kısa bilgileri">
+          <h2>Seminer Bilgileri</h2>
+          <div class="facts">
+            <div class="fact"><span>Tarih</span><strong>29 Eylül 2026, Salı</strong></div>
+            <div class="fact"><span>Saat</span><strong>20:30-22:00</strong></div>
+            <div class="fact"><span>Format</span><strong>Online Zoom, tek oturum</strong></div>
+            <div class="fact"><span>Ücret</span><strong>2.400 TL, KDV dahil</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container narrow">
+        <div class="glass-panel intro-panel">
+          <span class="eyebrow">Seminer Hakkında</span>
+          <h2>İyi niyeti, çocuğun gerçekten ihtiyaç duyduğu desteğe dönüştürmek</h2>
+          <p>Çocuğunuz antrenmandan suskun döndüğünde, maçtan sonra arabada ne söyleyeceğinizi bilemediğinizde ya da “iyi oynadın” demenin yetmediğini hissettiğinizde yalnız değilsiniz. Sporcu bir çocuğun ailesi olmak, tribünde alkışlamaktan çok daha fazlasını gerektiriyor.</p>
+          <p>Bu seminerde, sporcu çocuğunuzla kurduğunuz iletişimin performansını, motivasyonunu ve spora bağlılığını nasıl etkilediğini konuşacağız. Milli takımlardan altyapı kulüplerine kadar 700'ü aşkın sporcuyla yürüttüğüm çalışmalarda en sık karşılaştığım aile-sporcu iletişim kalıplarını sahadan örneklerle ele alacağım.</p>
+          <p>Seminer, anlatım ve katılımcıların sorularının değerlendirileceği soru-cevap bölümüyle ilerleyecek.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="basliklar">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Seminer İçeriği</span>
+          <h2>Ele alacağımız başlıklar</h2>
+          <p>Gündelik iletişimde sık karşılaşılan anları, sporcu çocuğun psikolojik ihtiyaçları üzerinden değerlendireceğiz.</p>
+        </div>
+        <div class="topic-list">
+          <article class="topic-item"><span class="topic-number">01</span><h3>Sporcu çocuğun ailesinden gerçekte beklediği şey</h3></article>
+          <article class="topic-item"><span class="topic-number">02</span><h3>Maç öncesi ve maç sonrası: hangi an ne söylenir, ne söylenmez</h3></article>
+          <article class="topic-item"><span class="topic-number">03</span><h3>Eve dönüş yolundaki konuşma neden bu kadar belirleyici</h3></article>
+          <article class="topic-item"><span class="topic-number">04</span><h3>Hata, yenilgi ve baskı karşısında kullandığımız dil</h3></article>
+          <article class="topic-item"><span class="topic-number">05</span><h3>Antrenörün alanı, ailenin alanı: sınırı nerede çizmeli</h3></article>
+          <article class="topic-item"><span class="topic-number">06</span><h3>Katılımcı sorularıyla değerlendirme</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience-band" id="kimler">
+      <div class="container audience-grid">
+        <div>
+          <span class="eyebrow">Kimler Katılabilir?</span>
+          <h2>Sporcu aileleri ve bakım verenler</h2>
+        </div>
+        <p class="audience-copy">Lisanslı ya da altyapıda spor yapan çocuk ve gençlerin anne-babaları ve bakım verenleri seminere katılabilir.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container presenter">
+        <div>
+          <span class="eyebrow">Semineri Veren</span>
+          <h2>Dr. Metin Aksu</h2>
+        </div>
+        <div class="presenter-copy">
+          <strong>Klinik Psikolog / Spor Psikolojisi</strong>
+          <p>Eski TFF Milli Takımlar Psikoloğu ve TFF Psikolojik Performans Departmanı kurucusu. “İçimdeki Mücadele” kitabının yazarı.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kayit">
+      <div class="container">
+        <div class="glass-panel contact-panel">
+          <div>
+            <span class="eyebrow">Kayıt ve Bilgi</span>
+            <h2>Katılım için WhatsApp'tan iletişime geçin</h2>
+            <p>Kayıt, ödeme ve seminere ilişkin diğer ayrıntılar için Room Psikolojik Danışmanlık ve Eğitim WhatsApp hattına yazabilirsiniz.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/905304766111?text=Merhaba%2C%20Sporcu%20%C3%87ocu%C4%9Fumla%20Nas%C4%B1l%20Konu%C5%9Fmal%C4%B1y%C4%B1m%3F%20seminerine%20kay%C4%B1t%20olmak%20istiyorum." target="_blank" rel="noopener">Kayıt için WhatsApp'tan Yazın</a>
+            <span class="contact-note">Zoom bağlantısı, seminer öncesinde kayıt olan katılımcılarla paylaşılacaktır.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Dr. Metin Aksu</span>
+      <a href="index.html">Ana sayfaya dön</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
