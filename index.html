@@ -533,7 +533,8 @@
     margin-bottom: 4px;
   }
   .education-card-actions { position: relative; z-index: 2; margin-top: auto; }
-  .education-card-featured {
+  .education-card-featured,
+  .education-card-wide {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
@@ -543,9 +544,12 @@
     column-gap: clamp(36px, 6vw, 78px);
     align-items: center;
   }
-  .education-card-featured .education-card-content { grid-area: content; }
-  .education-card-featured .education-card-meta { grid-area: meta; }
-  .education-card-featured .education-card-actions { grid-area: actions; }
+  .education-card-featured .education-card-content,
+  .education-card-wide .education-card-content { grid-area: content; }
+  .education-card-featured .education-card-meta,
+  .education-card-wide .education-card-meta { grid-area: meta; }
+  .education-card-featured .education-card-actions,
+  .education-card-wide .education-card-actions { grid-area: actions; }
 
   /* WORKS & ARTICLES */
   .works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
@@ -663,7 +667,8 @@
     .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; }
     .experience-layout, .works-grid, .education-list { grid-template-columns: 1fr; }
-    .education-card-featured {
+    .education-card-featured,
+    .education-card-wide {
       grid-template-columns: 1fr;
       grid-template-areas:
         "content"
@@ -922,7 +927,7 @@
   <section id="egitim">
     <div class="container">
       <div class="section-head gs-reveal-up">
-        <span class="eyebrow">Güncel Programlar</span>
+        <span class="eyebrow">Programlar</span>
         <h2>Eğitim ve Süpervizyon</h2>
         <p>Sporcu ailelerine, antrenörlere ve alanda çalışan meslektaşlara yönelik eğitim, seminer ve süpervizyon programları.</p>
       </div>
@@ -946,6 +951,23 @@
 
         <article class="glass-panel education-card gs-reveal-up">
           <div class="education-card-content">
+            <span class="eyebrow">Tamamlanan Seminer</span>
+            <h3>Sporcu Çocuğumla Nasıl Konuşmalıyım?</h3>
+            <p>Sporcuların aileleri için; maç öncesinden eve dönüş yoluna kadar çocuğun motivasyonunu, özgüvenini ve spora bağlılığını destekleyen iletişim yaklaşımını ele alan seminer.</p>
+          </div>
+          <div class="education-card-meta" aria-label="Tamamlanan sporcu aileleri semineri özeti">
+            <div class="education-meta-pill"><span>Format</span>Online Zoom</div>
+            <div class="education-meta-pill"><span>Tarih</span>29 Eylül 2026</div>
+            <div class="education-meta-pill"><span>Süre</span>90 dakika</div>
+            <div class="education-meta-pill"><span>Durum</span>Seminer tamamlandı</div>
+          </div>
+          <div class="education-card-actions">
+            <a class="btn btn-primary btn-magnet" href="sporcu-cocugumla-nasil-konusmaliyim.html">Semineri İncele</a>
+          </div>
+        </article>
+
+        <article class="glass-panel education-card gs-reveal-up">
+          <div class="education-card-content">
             <span class="eyebrow">Tamamlanan Program</span>
             <h3>Spor Psikolojisi Temel Eğitim Programı</h3>
             <p>Psikologlar, PDR ve spor bilimleri mezunları için hazırlanmış; klinik bakış açısı ve saha deneyimini birleştiren 4 modüllük eğitim.</p>
@@ -961,7 +983,7 @@
           </div>
         </article>
 
-        <article class="glass-panel education-card gs-reveal-up">
+        <article class="glass-panel education-card education-card-wide gs-reveal-up">
           <div class="education-card-content">
             <span class="eyebrow">Mesleki Süpervizyon</span>
             <h3>Spor Psikolojisi Alanında Bireysel Süpervizyon</h3>
